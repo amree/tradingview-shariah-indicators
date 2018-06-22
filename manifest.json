@@ -4,6 +4,7 @@
   "description": "Shows shariah compliant stock for Malaysia Exchange",
   "manifest_version": 2,
   "author": "Amree Zaid",
+  "homepage_url": "https://github.com/amree/tradingview-shariah-indicators",
   "content_scripts": [
     {
       "run_at": "document_end",
