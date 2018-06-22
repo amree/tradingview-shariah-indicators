@@ -1,0 +1,33 @@
+{
+  "name": "TradingView Shariah Indicators",
+  "version": "1.0.0",
+  "description": "Shows shariah compliant stock for Malaysia Exchange",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "https://*.tradingview.com/*"
+      ],
+      "js": [
+        "vendor/jquery.min.js",
+        "page.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "vendor/jquery.min.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "web_accessible_resources": [
+    "stocks.json"
+  ],
+  "permissions": [
+    "webRequestBlocking",
+    "webRequest",
+    "<all_urls>"
+  ]
+}
