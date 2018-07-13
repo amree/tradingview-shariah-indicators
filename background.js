@@ -1,14 +1,19 @@
-function monitorTraffic(response) {
-  console.log(response);
+monitorTraffic = (response) => {
   chrome.tabs.query(
     {
       url: ['https://www.tradingview.com/screener*']
     },
-    function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, { status: 'ready' }, function(response) {});
+    (tabs) => {
+      for (var index in tabs) {
+        chrome.tabs.sendMessage(
+          tabs[index].id,
+          {status: 'ready'},
+          (response) => {}
+        );
+      }
     }
   );
-}
+};
 
 chrome.webRequest.onCompleted.addListener(
   monitorTraffic,
