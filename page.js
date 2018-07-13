@@ -5,6 +5,7 @@ fetch(url)
   .then((response) => response.json())
   .then((json) => { shariahStocks = json; });
 
+const shariahColour = '#00a97f';
 const selectors = {
   row: '.tv-screener-table__symbol-container',
   code: '.tv-screener__symbol',
@@ -20,9 +21,7 @@ chrome.runtime.onMessage.addListener(
         const stock = shariahStocks.find(o => o.code === code);
 
         if (stock !== undefined) {
-          const name = $(el).find(selectors.name).text().trim();
-
-          $(el).find(selectors.placeholder).html('[S]');
+          $(el).find(selectors.code).css('color', shariahColour);
         };
       });
     }

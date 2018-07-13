@@ -1,7 +1,10 @@
 monitorTraffic = (response) => {
   chrome.tabs.query(
     {
-      url: ['https://www.tradingview.com/screener*']
+      url: [
+        'https://www.tradingview.com/screener/*',
+        'https://www.tradingview.com/chart/*'
+      ]
     },
     (tabs) => {
       for (var index in tabs) {
