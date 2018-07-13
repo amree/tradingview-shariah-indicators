@@ -10,7 +10,6 @@ const selectors = {
   row: '.tv-screener-table__symbol-container',
   code: '.tv-screener__symbol',
   name: '.tv-screener__description',
-  placeholder: 'sup'
 }
 
 chrome.runtime.onMessage.addListener(
